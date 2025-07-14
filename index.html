@@ -1,34 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Blessy 🎂</title>
-  <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 21st Birthday, My Dearest Blessy! 🎉</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🎉 Happy Birthday, Arul Blessy T 🎂</h1>
-    <p class="subtitle">Born on July 27, 2004 • Our beloved Angel 💖✝️</p>
-    <p>Nicknames: <strong>Thango</strong>, <strong>Angel</strong>, <strong>Cabbage</strong>, <strong>Ball</strong>, <strong>Bighead</strong></p>
-  </header>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Happy 21st Birthday, Arul Blessy!</h1>
+                <p class="nicknames">My dearest Thango, Angel, Cabbage, Ball, Bighead... ❤️</p>
+                <p class="short-girl-message">The cutest short girl who stole my heart 🧁</p>
+            </div>
+        </section>
 
-  <div class="gallery">
-    <img src="images/img1.jpg.jpg" alt="Blessy 1">
-    <img src="images/img2.jpg.jpg" alt="Blessy 2">
-    <img src="images/img3.jpg.jpg" alt="Blessy 3">
-    <img src="images/img4.jpg.jpg" alt="Blessy 4">
-    <img src="images/img5.jpg.jpg" alt="Blessy 5">
-    <img src="images/img6.jpg.jpg" alt="Blessy 6">
-    <img src="images/img7.jpg.jpg" alt="Blessy 7">
-    <img src="images/img8.jpg.jpg" alt="Blessy 8">
-  </div>
+        <!-- Born at 11:30 PM Message -->
+        <section class="birth-time-message">
+            <p>Born under the stars, at 11:30 PM, a true night bloom. Your journey began with the quiet magic of the late hour. ✨</p>
+        </section>
 
-  <p class="blessings">
-    May your smile be as bright as the stars ✨ and your heart be filled with love every single day.
-    Happy Birthday, dear Blessy 💗
-  </p>
+        <!-- Heartfelt Birthday Message -->
+        <section class="heartfelt-message">
+            <h2>My Dearest Blessy,</h2>
+            <p>
+                On this beautiful day, as you step into your 21st year, my heart overflows with wishes for you. You are a rare gem, a quiet strength, and a soul that shines brighter than you know. Though words often fall short for you, know that every beat of my heart whispers blessings for your happiness, peace, and dreams. May this year unfold magic, courage, and all the unspoken joys you truly deserve. You are cherished, more than you can ever imagine.
+            </p>
+            <p>
+                May your path be adorned with moments that make your spirit soar, and may you always find comfort in knowing how deeply you are cared for. Happy Birthday, my love.
+            </p>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- Photo Gallery -->
+        <h2>Our Beautiful Memories</h2>
+        <section class="gallery">
+            <div class="gallery-card">
+                <img src="images/img1.jpg.jpg" alt="Blessy Memory 1">
+                <div class="gallery-card-caption">The start of our story.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img2.jpg.jpg" alt="Blessy Memory 2">
+                <div class="gallery-card-caption">Every moment with you is a treasure.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img3.jpg.jpg" alt="Blessy Memory 3">
+                <div class="gallery-card-caption">Your smile, my favorite view.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img4.jpg.jpg" alt="Blessy Memory 4">
+                <div class="gallery-card-caption">Adventures, big or small.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img5.jpg.jpg" alt="Blessy Memory 5">
+                <div class="gallery-card-caption">Just being ourselves.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img6.jpg.jpg" alt="Blessy Memory 6">
+                <div class="gallery-card-caption">Laughter, our shared language.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img7.jpg.jpg" alt="Blessy Memory 7">
+                <div class="gallery-card-caption">Through every season.</div>
+            </div>
+            <div class="gallery-card">
+                <img src="images/img8.jpg.jpg" alt="Blessy Memory 8">
+                <div class="gallery-card-caption">Forever grateful for you.</div>
+            </div>
+        </section>
+
+        <!-- 21 Birthday Boxes -->
+        <h2>A Journey Through Your Years...</h2>
+        <section class="birthday-boxes-grid" id="birthdayBoxes">
+            <!-- Boxes will be dynamically generated by JavaScript -->
+        </section>
+
+        <!-- How Well Do I Know You? Quiz Section -->
+        <section class="quiz-section">
+            <h2>How Well Do I Know You, Blessy? 🤔</h2>
+            <div class="quiz-container">
+                <div id="quizQuestion" class="quiz-question"></div>
+                <div id="quizOptions" class="quiz-options"></div>
+                <div id="quizFeedback" class="quiz-feedback"></div>
+                <button id="quizNextBtn" class="quiz-button">Next Question</button>
+                <button id="quizRestartBtn" class="quiz-button restart-button hidden">Restart Quiz</button>
+            </div>
+        </section>
+
+        <!-- Daily Dose of Appreciation Section -->
+        <section class="appreciation-section">
+            <h2>A Daily Dose of Appreciation ✨</h2>
+            <div class="appreciation-content">
+                <button id="getAppreciationBtn" class="appreciation-button">Get a Special Message!</button>
+                <p id="appreciationMessage" class="appreciation-message">Click the button to reveal a heartfelt message just for you!</p>
+            </div>
+        </section>
+
+        <!-- Love Quotes Section -->
+        <section class="quotes-section">
+            <h2>Words of Love, Just For You 💖</h2>
+            <div class="quotes-content">
+                <p id="loveQuoteDisplay" class="quote-text">Loading a beautiful thought...</p>
+                <button id="nextLoveQuoteBtn" class="quote-nav-button">Next Quote</button>
+            </div>
+        </section>
+
+        <!-- Health Quotes Section -->
+        <section class="quotes-section">
+            <h2>For Your Well-being, My Love 🌱</h2>
+            <div class="quotes-content">
+                <p id="healthQuoteDisplay" class="quote-text">Loading an inspiring thought...</p>
+                <button id="nextHealthQuoteBtn" class="quote-nav-button">Next Quote</button>
+            </div>
+        </section>
+
+        <!-- Memory Match Game -->
+        <section class="game-section">
+            <h2>Memory Match Challenge! 🧠</h2>
+            <div class="game-container">
+                <div id="memoryGrid" class="memory-grid">
+                    <!-- Cards will be dynamically generated here -->
+                </div>
+                <p id="memoryInfo" class="memory-info">Find the matching pairs!</p>
+                <div class="game-controls">
+                    <button id="memoryRestartBtn" class="game-button">Restart Game</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catch the Falling Hearts Game -->
+        <section class="game-section">
+            <h2>Catch the Falling Hearts! ❤️</h2>
+            <div class="game-container">
+                <canvas id="heartGameCanvas" class="game-canvas" width="600" height="400"></canvas>
+                <p id="heartGameScore" class="memory-info">Score: 0</p>
+                <div class="game-controls">
+                    <button id="heartGameStartBtn" class="game-button">Start Game</button>
+                    <button id="heartGameRestartBtn" class="game-button hidden">Restart Game</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Player -->
+        <div class="music-player">
+            <h2>A Melody For You 🎶</h2>
+            <audio controls loop autoplay>
+                <source src="bensound-love.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p style="font-size: 0.9rem; color: #94a3b8; margin-top: 0.5rem; font-family: 'Poppins', sans-serif;">
+                (Music: "Bensound - Love". Please ensure 'bensound-love.mp3' is in the same folder.)
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Created with all my love — Yours truly, Kingston 💘</p>
+        </footer>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
