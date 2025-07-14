@@ -1,69 +1,604 @@
+/* Global Styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fbeeff;
-  color: #333;
-  margin: 0;
-  padding: 20px;
-  text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); /* Dark Blue Gradient */
+    color: #e2e8f0; /* Light text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth;
 }
 
 .container {
-  max-width: 960px;
-  margin: auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Great Vibes', cursive;
+    color: #93c5fd; /* Light blue accent */
+    text-shadow: 0 0 10px rgba(147, 197, 253, 0.6);
 }
 
 h1 {
-  color: #ff4da6;
-  font-size: 2.5em;
+    font-size: 4.5rem; /* Larger for impact */
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.5s ease-out;
 }
 
-.subtitle {
-  font-size: 1.2em;
-  color: #888;
-  margin-bottom: 20px;
+h2 {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #93c5fd, 0 0 10px #93c5fd; }
+    50% { box-shadow: 0 0 15px #93c5fd, 0 0 25px #93c5fd; }
+    100% { box-shadow: 0 0 5px #93c5fd, 0 0 10px #93c5fd; }
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 2rem;
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.8)), url('https://placehold.co/1920x1080/0f172a/93c5fd?text=Happy+Birthday+Blessy') no-repeat center center/cover;
+    background-size: cover; /* Ensure image covers the area */
+    border-radius: 0 0 50% 50% / 0 0 10% 10%; /* Curved bottom */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for text readability */
+    border-radius: inherit;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .nicknames {
-  font-style: italic;
-  margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-top: 1rem;
+    animation: fadeInUp 2s ease-out;
 }
 
+.short-girl-message {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #fca5a5; /* Light pink for warmth */
+    margin-top: 2rem;
+    animation: fadeIn 2.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Born at 11:30 PM Message */
+.birth-time-message {
+    background-color: #1a202c;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 4rem;
+    border: 1px solid #334155;
+    font-size: 1.2rem;
+    color: #93c5fd;
+    font-weight: 600;
+    animation: fadeInUp 1.8s ease-out;
+}
+
+
+/* Photo Gallery */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    perspective: 1000px; /* For 3D effect */
 }
 
-.gallery img {
-  height: 250px;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.blessings {
-  margin-top: 40px;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #444;
-}
-
-.floating {
-  position: fixed;
-  top: 100vh;
-  font-size: 24px;
-  animation: floatUp 3s ease-out forwards;
-  pointer-events: none;
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-120vh);
+.gallery-card {
+    background-color: #1a202c; /* Darker background for cards */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d; /* Enable 3D transformations for children */
+    position: relative;
+    animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
-  }
+}
+
+.gallery-card:nth-child(even) { animation-delay: 0.2s; }
+.gallery-card:nth-child(odd) { animation-delay: 0.4s; }
+
+.gallery-card:hover {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05); /* 3D hover effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(147, 197, 253, 0.8); /* Glow on hover */
+    z-index: 10; /* Bring to front on hover */
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #334155;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.03);
+}
+
+.gallery-card-caption {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+/* Heartfelt Message */
+.heartfelt-message {
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6); /* Blue gradient */
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 4rem;
+    border: 2px solid #93c5fd;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.heartfelt-message p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #e0f2fe; /* Lighter blue for poetic text */
+    text-shadow: 0 0 8px rgba(224, 242, 254, 0.5);
+}
+
+/* Birthday Boxes */
+.birthday-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.birthday-box {
+    background-color: #1a202c; /* Darker background */
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #334155;
+    animation: zoomIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.birthday-box:nth-child(even) { animation-delay: 0.1s; }
+.birthday-box:nth-child(odd) { animation-delay: 0.05s; }
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.birthday-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(147, 197, 253, 0.7); /* Stronger glow */
+    background-color: #2d3748; /* Slightly lighter on hover */
+}
+
+.birthday-box h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #93c5fd;
+    margin-bottom: 0.8rem;
+    text-shadow: none;
+}
+
+.birthday-box p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    font-weight: 300;
+    text-align: left;
+}
+
+/* Quiz Section */
+.quiz-section, .appreciation-section, .quotes-section, .game-section {
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6); /* Blue gradient */
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 4rem;
+    border: 2px solid #93c5fd;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.quiz-container, .appreciation-content, .quotes-content, .game-container {
+    background-color: #1a202c;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.quiz-question {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #e0f2fe;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-option-button {
+    background-color: #0f172a; /* Darker blue */
+    color: #e0f2fe;
+    border: 1px solid #3b82f6;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-option-button:hover:not(.disabled) {
+    background-color: #1e3a8a; /* Slightly lighter on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 0 8px rgba(147, 197, 253, 0.5);
+}
+
+.quiz-option-button.correct {
+    background-color: #065f46; /* Green for correct */
+    border-color: #34d399;
+    color: #d1fae5;
+    box-shadow: 0 0 10px #34d399;
+}
+
+.quiz-option-button.incorrect {
+    background-color: #991b1b; /* Red for incorrect */
+    border-color: #ef4444;
+    color: #fee2e2;
+    box-shadow: 0 0 10px #ef4444;
+}
+
+.quiz-option-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.quiz-feedback {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    min-height: 30px; /* To prevent layout shift */
+    color: #e0f2fe; /* Default feedback color */
+}
+
+.quiz-button {
+    background-color: #3b82f6; /* Bright blue */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.quiz-button.restart-button {
+    background-color: #64748b; /* Gray for restart */
+}
+
+.quiz-button.restart-button:hover {
+    background-color: #475569;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Appreciation Section */
+.appreciation-button {
+    background-color: #fca5a5; /* Light pink */
+    color: #881337; /* Darker pink text */
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+.appreciation-button:hover {
+    background-color: #f87171; /* Slightly darker pink */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(252, 165, 165, 0.7);
+}
+
+.appreciation-message {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #e0f2fe;
+    min-height: 60px; /* To prevent layout shift */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 8px rgba(224, 242, 254, 0.5);
+}
+
+/* Quotes Section */
+.quotes-content {
+    min-height: 150px; /* Ensure space for quotes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quote-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #e0f2fe;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px rgba(224, 242, 254, 0.5);
+    min-height: 100px; /* Ensure space for longer quotes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quote-nav-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.quote-nav-button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Game Sections */
+.game-canvas {
+    background-color: #0f172a; /* Dark background for games */
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* Blue glow for games */
+}
+
+.game-controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.game-button {
+    background-color: #fca5a5; /* Pink for game buttons */
+    color: #881337;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game-button:hover {
+    background-color: #f87171;
+    transform: translateY(-2px);
+}
+
+/* Memory Match specific styles */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for 16 cards */
+    gap: 10px;
+    max-width: 420px; /* Adjust based on card size */
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #1a202c;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.memory-card {
+    width: 100px; /* Fixed width for cards */
+    height: 100px; /* Fixed height for cards */
+    background-color: #3b82f6; /* Card back color */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.memory-card.flipped {
+    background-color: #e0f2fe; /* Card front color */
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.memory-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+}
+
+.memory-card-front {
+    transform: rotateY(180deg);
+    color: #1e3a8a; /* Color of emoji on front */
+}
+
+.memory-info {
+    color: #e0f2fe;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+
+/* Music Player */
+.music-player {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-color: #1a202c;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155;
+}
+
+.music-player audio {
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.footer p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #fca5a5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.5rem; }
+    .hero { padding: 6rem 1rem; }
+    .nicknames { font-size: 1.5rem; }
+    .short-girl-message { font-size: 2rem; }
+    .heartfelt-message p { font-size: 1.4rem; }
+    .container { padding: 1rem; }
+    .gallery { grid-template-columns: 1fr; }
+    .birthday-boxes-grid { grid-template-columns: 1fr; }
+    .quiz-question { font-size: 1.4rem; }
+    .quiz-option-button { font-size: 1rem; padding: 0.7rem 1rem; }
+    .quiz-button { font-size: 1rem; padding: 0.7rem 1.2rem; }
+    .appreciation-button { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
+    .appreciation-message { font-size: 1.4rem; }
+    .quote-text { font-size: 1.4rem; }
+    .memory-card { width: 80px; height: 80px; font-size: 2rem; }
+    .memory-grid { max-width: 340px; }
+    .game-canvas { width: 100%; height: auto; max-width: 400px; } /* Adjust canvas size */
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.2rem; }
+    .hero { padding: 4rem 1rem; }
+    .nicknames { font-size: 1.2rem; }
+    .short-girl-message { font-size: 1.6rem; }
+    .heartfelt-message p { font-size: 1.2rem; }
+    .birthday-box h3 { font-size: 1.3rem; }
+    .birthday-box p { font-size: 0.85rem; }
+    .quiz-question { font-size: 1.2rem; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .quiz-button { width: 100%; margin-top: 1rem; }
+    .appreciation-button { width: 100%; }
+    .appreciation-message { font-size: 1.2rem; }
+    .quote-text { font-size: 1.2rem; }
+    .memory-card { width: 70px; height: 70px; font-size: 1.8rem; }
+    .memory-grid { max-width: 300px; }
 }
