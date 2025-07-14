@@ -66,8 +66,8 @@ p {
 /* Hero Section */
 .hero {
     padding: 8rem 2rem;
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.8)), url('https://placehold.co/1920x1080/0f172a/93c5fd?text=Happy+Birthday+Blessy') no-repeat center center/cover;
-    background-size: cover; /* Ensure image covers the area */
+    /* Removed external URL to ensure consistent background on GitHub Pages */
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.8));
     border-radius: 0 0 50% 50% / 0 0 10% 10%; /* Curved bottom */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin-bottom: 4rem;
