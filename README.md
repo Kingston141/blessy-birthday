@@ -1,4 +1,4 @@
-<h1 align="center">🎂 Blessy's Birthday Website 🎉</h1>
+<h1 align="center">🎂  Birthday Website 🎉</h1>
 
 <p align="center">
   A magical and personalized website created with love 💖 for a special soul, <strong>Blessy</strong>.
@@ -9,7 +9,7 @@
 ## 🌟 About the Project
 
 This project isn't just a website — it's a **digital gift** straight from the heart ❤️.  
-Crafted using `HTML`, `CSS`, and `JavaScript`, this site is filled with love, memories, and personal touches to make **Blessy's birthday** truly unforgettable.
+Crafted using `HTML`, `CSS`, and `JavaScript`, this site is filled with love, memories, and personal touches to make ** Birthday Site ** truly unforgettable.
 
 ---
 
@@ -25,7 +25,7 @@ Crafted using `HTML`, `CSS`, and `JavaScript`, this site is filled with love, me
 
 ## 📁 Folder Structure
 
-📂 blessy-birthday/
+📂 Angel-birthday/
 ┣ 📂 images/ # All image assets
 ┣ 📄 index.html # Main webpage
 ┣ 📄 style.css # Styling the magic ✨
@@ -37,7 +37,7 @@ Crafted using `HTML`, `CSS`, and `JavaScript`, this site is filled with love, me
 
 > "Some people deserve more than just wishes.  
 > They deserve a whole experience.  
-> So here it is — something truly made for **you**, Blessy."
+> So here it is — something truly made for **you**, Angel!."
 
 I poured my heart into this because you’re more than a name or a birthday — you're a memory, a smile, and a spark that lights up my world. 🌈
 
